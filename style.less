@@ -1,0 +1,104 @@
+@LighCyan: hsl(193, 38%, 86%);
+@NeonGreen: hsl(150, 100%, 66%);
+@GrayishBlue: hsl(217, 19%, 38%);
+@DarkGrayishBlue: hsl(217, 19%, 24%);
+@DarkBlue: hsl(218, 23%, 16%);
+
+* {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: @DarkBlue;
+    color: #fff;
+}
+
+.container {
+    .centered();
+    width: 100vw;
+    height: 100vh;
+    .wrapper {
+        background: @DarkGrayishBlue;
+        width: 90%;
+        border-radius: .5em;
+        padding: .4em;
+        .advice-no {
+            .centered();
+            margin: .5em 0;
+            font-weight: 800;
+            color: @NeonGreen;
+        }
+        .advice {
+            font-weight: 800;
+            font-size: 28px;
+            text-align: center;
+            color: @LighCyan;
+            padding: .4em;
+        }
+        .divider {
+            .centered();
+            margin: 1em 0;
+            width: 100%;
+            img {
+                max-width: 100%;
+                margin: 0 auto;
+                display: block;
+            }
+            #desktop {
+                display: none;
+            }
+        }
+        .generateBtn {
+            background: @NeonGreen;
+            padding: 12px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            .centered();
+            margin: 0 auto -2em auto;
+            &:hover {
+                box-shadow: 0px 0px 10px 3px @NeonGreen;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        max-width: 600px;
+        border-radius: 35px;
+        .advice-no {
+            font-size: 1em;
+            padding: 1em 0em 0em;
+        }
+        .advice {
+            font-size: 35px!important;
+            padding: 1em;
+            text-align: center;
+        }
+        .divider {
+            .centered();
+            margin: 1em 0;
+            width: 100%;
+            #mobile {
+                display: none;
+            }
+            #desktop {
+                display: block!important;
+                width: 100%;
+                margin: 0 1em 1.2em;
+            }
+        }
+    }
+}
